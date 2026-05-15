@@ -5,10 +5,9 @@
 <h2 align="center">Understanding User Thoughts in Real-World LLM Interactions</h2>
 
 <p align="center">
-  🌐 <a href="#">Project Page</a> &nbsp;·&nbsp;
-  📄 <a href="#">Paper</a> &nbsp;·&nbsp;
-  💻 <a href="#">Code</a> &nbsp;·&nbsp;
-  🤗 <a href="#">Dataset</a>
+  🌐 <a href="https://thoughttrace-project.github.io/">Project Page</a> &nbsp;·&nbsp;
+  📄 <a href="https://thoughttrace-project.github.io/ThoughtTrace.pdf">Paper</a> &nbsp;·&nbsp;
+  🤗 <a href="https://huggingface.co/datasets/SCAI-JHU/ThoughtTrace">Dataset</a>
 </p>
 
 ---
