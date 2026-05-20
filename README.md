@@ -6,7 +6,7 @@
 
 <p align="center">
   🌐 <a href="https://thoughttrace-project.github.io/">Project Page</a> &nbsp;·&nbsp;
-  📄 <a href="https://thoughttrace-project.github.io/ThoughtTrace.pdf">Paper</a> &nbsp;·&nbsp;
+  📄 <a href="https://arxiv.org/abs/2605.20087">Paper</a> &nbsp;·&nbsp;
   🤗 <a href="https://huggingface.co/datasets/SCAI-JHU/ThoughtTrace">Dataset</a>
 </p>
 
