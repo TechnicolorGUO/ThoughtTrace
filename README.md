@@ -136,9 +136,9 @@ If you use ThoughtTrace, please cite:
 
 ```bibtex
 @article{jin2026thoughttrace,
-  title  = {ThoughtTrace: Understanding User Thoughts in Real-World LLM Interactions},
-  author = {Jin, Chuanyang and Li, Binze and Xie, Haopeng and Fang, Cathy Mengying and Li, Tianjian and Longpre, Shayne and Gu, Hongxiang and Chen, Maximillian and Shu, Tianmin},
-  year   = {2026},
-  url    = {https://thoughttrace-project.github.io/}
+  title={ThoughtTrace: Understanding User Thoughts in Real-World LLM Interactions},
+  author={Jin, Chuanyang and Li, Binze and Xie, Haopeng and Fang, Cathy Mengying and Li, Tianjian and Longpre, Shayne and Gu, Hongxiang and Chen, Maximillian and Shu, Tianmin},
+  journal={arXiv preprint arXiv:2605.20087},
+  year={2026}
 }
 ```
