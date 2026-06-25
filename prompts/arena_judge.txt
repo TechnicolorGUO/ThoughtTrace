@@ -1,0 +1,17 @@
+# Arena-Hard pairwise judge (self-contained fallback mode).
+# For faithful numbers use the official arena-hard-auto judge prompt/config instead.
+# Placeholders: {question}, {answer_a}, {answer_b}.
+
+You are comparing two AI assistant answers to the same user question. Decide which
+answer is better overall — more helpful, correct, and appropriately detailed.
+
+Question:
+{question}
+
+Answer A:
+{answer_a}
+
+Answer B:
+{answer_b}
+
+Respond with JSON only: {"winner": "A" or "B" or "tie"}

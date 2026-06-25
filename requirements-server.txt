@@ -1,0 +1,30 @@
+# Server-side deps for the LLM / embedding / training phases.
+# (The gold-label analyses in Phases 0/1A/1B/2C/2D need none of this.)
+
+# core
+numpy
+pandas
+pyyaml
+tqdm
+tiktoken              # exact gpt-4o token counts (Phase 1B)
+openai>=1.40          # OpenAI-compatible client -> vLLM or a hosted API
+
+# inference serving (skip if you only call a hosted API like DeepSeek)
+vllm
+
+# embeddings (Phase 2A; small, can run on CPU)
+sentence-transformers
+scikit-learn
+umap-learn
+
+# Phase 4 — DPO training + eval (GPU)
+torch                 # install the CUDA build matching your driver
+transformers>=4.44
+trl>=0.11
+peft>=0.12
+accelerate>=0.33
+datasets>=2.18
+bitsandbytes>=0.43    # 4-bit QLoRA — required to fit Qwen3-8B on a 24GB 4090
+
+# figures
+matplotlib

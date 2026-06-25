@@ -1,0 +1,20 @@
+# Appendix D.9 — message-guided dissatisfaction classifier.
+# Replace with the EXACT Appendix D.9 message-guided setup for faithful reproduction.
+# Decides, from the user's FOLLOW-UP message alone, whether they were dissatisfied
+# with the assistant's response (the message-only analogue of a dissatisfaction reaction).
+# Placeholders: {original} = the assistant response, {followup} = the user's next message.
+
+You are judging whether a user was DISSATISFIED with an AI assistant's response,
+based only on what the user said next.
+
+Assistant's response:
+{original}
+
+User's next message:
+{followup}
+
+If the user's follow-up indicates dissatisfaction — they had to correct, re-ask,
+complain, narrow, or redirect because the response missed — answer dissatisfied.
+If they simply moved on satisfied or continued naturally, answer satisfied.
+
+Respond with JSON only: {"dissatisfied": true or false}

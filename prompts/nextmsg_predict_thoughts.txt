@@ -1,0 +1,17 @@
+# Appendix D.8 — next-message prediction, THOUGHT-AUGMENTED context.
+# Replace with the EXACT Appendix D.8 prediction prompt for faithful reproduction.
+# Placeholder: {context} = rendered dialogue with the user's private thoughts
+# (reasons on their messages, reactions to the assistant) interleaved at each turn.
+
+You are predicting what a user will say next in a conversation with an AI assistant.
+
+Below is the conversation so far. Interleaved in [THOUGHT] markers are the user's
+private, self-reported thoughts: their reasons for sending messages and their
+reactions to the assistant's responses. Use these thoughts to better anticipate
+what the user wants. Predict the user's very next message.
+Write only the message text, in the user's voice, with no preamble or explanation.
+
+Conversation:
+{context}
+
+User's next message:

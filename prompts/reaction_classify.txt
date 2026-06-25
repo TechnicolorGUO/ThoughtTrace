@@ -1,0 +1,26 @@
+# Appendix D.6 — reaction-type classification prompt.
+# NOTE: For faithful reproduction, replace the body below with the EXACT prompt
+# text printed in the paper's Appendix D.6. The version here is functionally
+# equivalent (same label set, single-label, JSON output) so the pipeline runs
+# before you have the paper text on hand.
+#
+# Placeholders: {message} = the assistant message text, {thought} = the reaction text.
+
+You are labeling a user's internal reaction to an AI assistant's response.
+
+Given the assistant's message and the user's self-reported reaction to it,
+classify the reaction into EXACTLY ONE of these 5 categories:
+
+- explicit_affirmation: the user is satisfied / approves of the response
+- partial_satisfaction: the user is partially satisfied
+- content_relevance: dissatisfied because the content is wrong, irrelevant, or unhelpful
+- presentation_style: dissatisfied because of formatting, tone, length, or style
+- scope_fit: dissatisfied because the response's scope does not fit (too broad/narrow/off-target)
+
+Assistant message:
+{message}
+
+User's reaction:
+{thought}
+
+Respond with JSON only: {"label": "<one_of_the_5_categories>"}

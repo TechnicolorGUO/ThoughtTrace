@@ -1,0 +1,36 @@
+# Default configuration for the ThoughtTrace reproduction (Qwen3-8B / local).
+# Phases read model names, paths, and seeds from here so they can be swapped
+# without touching code.
+
+seed: 0
+
+paths:
+  data: data/ThoughtTrace.jsonl
+  examples: data/ThoughtTrace_examples.jsonl
+  baselines: data/baselines        # WildChat / LMSYS subsets (Phase 1/4)
+  outputs: outputs
+
+# Local serving: a single Qwen3-8B behind an OpenAI-compatible vLLM endpoint
+# reused by every LLM-as-X call in Phases 1-4.
+llm:
+  model: Qwen/Qwen3-8B
+  base_url: http://localhost:8000/v1
+  api_key: EMPTY
+  temperature: 0.0          # labeling / judging / prediction run deterministic
+  max_tokens: 1024
+  enable_thinking: false    # Qwen3 thinking mode off for short constrained output
+  cache_dir: outputs/llm_cache
+
+# Separate, architecturally different judge to avoid self-preference bias
+# (see the REPRODUCTION.md "Judge note"). Set to null to fall back to `llm`.
+judge:
+  model: meta-llama/Llama-3.1-8B-Instruct
+  base_url: http://localhost:8001/v1
+  api_key: EMPTY
+  temperature: 0.0
+
+embeddings:
+  model: Qwen/Qwen3-Embedding-0.6B   # swappable: 4B / 8B
+
+tokenizer:
+  name: gpt-4o                # tiktoken, for length stats (unchanged from paper)
