@@ -1,0 +1,28 @@
+# Appendix D.6 — reason-type classification prompt.
+# NOTE: For faithful reproduction, replace the body below with the EXACT prompt
+# text printed in the paper's Appendix D.6. The version here is functionally
+# equivalent (same label set, single-label, JSON output) so the pipeline runs
+# before you have the paper text on hand.
+#
+# Placeholders: {message} = the user message text, {thought} = the reason text.
+
+You are labeling why a user sent a message to an AI assistant.
+
+Given the user's message and their self-reported reason for sending it, classify
+the reason into EXACTLY ONE of these 7 categories:
+
+- task_motivation: the underlying goal or motivation behind starting the task
+- task_continuation: continuing or following up on the ongoing task
+- task_reorientation: changing direction or correcting the task
+- context_grounding_and_constraints: providing background, context, or constraints
+- content_expectation: what content/answer the user expects
+- style_expectation: expectations about format, tone, or presentation style
+- social_and_others: social, emotional, or other non-task reasons
+
+User message:
+{message}
+
+User's reason:
+{thought}
+
+Respond with JSON only: {"label": "<one_of_the_7_categories>"}
