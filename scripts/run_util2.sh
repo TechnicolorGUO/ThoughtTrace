@@ -18,9 +18,11 @@ export REWRITER_MODEL="deepseek-v4-flash"
 export REWRITER_KEY="${DEEPSEEK_KEY:?set DEEPSEEK_KEY in your env, do not hardcode}"
 #   (b) or a local vLLM Qwen3-8B: set REWRITER_BASE=http://localhost:8000/v1 etc.
 
-BASE_MODEL="Qwen/Qwen3-8B"          # DPO base / Arena-Hard base row
-OUT="outputs/phase4"
-ARENA_QUESTIONS="data/arena_hard/question.jsonl"   # from lmarena/arena-hard-auto
+# DPO base / Arena-Hard base row. Override with a local path, e.g.
+#   export BASE_MODEL=/root/Qwen3-8B
+BASE_MODEL="${BASE_MODEL:-Qwen/Qwen3-8B}"
+OUT="${OUT:-outputs/phase4}"
+ARENA_QUESTIONS="${ARENA_QUESTIONS:-data/arena_hard/question.jsonl}"   # from lmarena/arena-hard-auto
 N_THOUGHT=1000
 N_MESSAGE=450
 SEED=0
