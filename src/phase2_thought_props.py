@@ -82,13 +82,13 @@ def run_distributions(data: dict[str, dict], out_dir: Path = OUT_DIR) -> dict:
 # --- 2. optional labeler validation (needs the model) -----------------------
 
 def _load_prompt(name: str) -> str:
-    return (PROMPTS_DIR / name).read_text(encoding="utf-8")
+    from .prompts import load_prompt
+    return load_prompt(name)
 
 
 def _fill(template: str, message: str, thought: str) -> str:
-    # .replace (not .format) — message/thought and the JSON instructions contain
-    # literal braces that would break str.format.
-    return template.replace("{message}", message).replace("{thought}", thought)
+    from .prompts import fill
+    return fill(template, message=message, thought=thought)
 
 
 def _sample_thoughts(data: dict[str, dict], kind: str, n: int, seed: int):

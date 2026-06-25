@@ -1,0 +1,13 @@
+# Appendix D.8 — next-message prediction, HISTORY-ONLY context.
+# Replace with the EXACT Appendix D.8 prediction prompt for faithful reproduction.
+# Placeholder: {context} = rendered dialogue up to and including the last assistant turn.
+
+You are predicting what a user will say next in a conversation with an AI assistant.
+
+Below is the conversation so far. Predict the user's very next message.
+Write only the message text, in the user's voice, with no preamble or explanation.
+
+Conversation:
+{context}
+
+User's next message:

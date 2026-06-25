@@ -1,0 +1,18 @@
+# Appendix D.8 — thought-quality judge (1-5) used to keep only informative thoughts.
+# Replace with the EXACT Appendix D.8 quality-filter prompt for faithful reproduction.
+# Placeholders: {message} = the assistant message the reaction responds to,
+#               {thought} = the user's reaction text.
+
+You are rating how INFORMATIVE a user's self-reported thought is for predicting
+what they will do or say next. A high-quality thought reveals a concrete
+preference, intent, judgment, or next step; a low-quality one is vague, empty,
+or generic.
+
+Assistant message the user is reacting to:
+{message}
+
+User's reaction:
+{thought}
+
+Rate the thought's informativeness from 1 (uninformative) to 5 (highly informative).
+Respond with JSON only: {"score": <integer 1-5>}

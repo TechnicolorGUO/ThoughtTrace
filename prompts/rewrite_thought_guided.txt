@@ -1,0 +1,23 @@
+# Appendix D.9 — thought-guided rewrite prompt.
+# Replace with the EXACT Appendix D.9 thought-guided rewrite prompt for faithful reproduction.
+# The rewriter produces the DPO `chosen` response; a stronger rewriter -> stronger
+# chosen -> larger win-rate margin (see REPRODUCTION.md rewriter tradeoff).
+# Placeholders: {context} = dialogue up to the dissatisfying assistant turn,
+#               {original} = the assistant response the user was dissatisfied with,
+#               {thought} = the user's reaction explaining the dissatisfaction.
+
+You are improving an AI assistant's response. The user was dissatisfied with the
+assistant's reply, and privately wrote down WHY. Rewrite the assistant's response
+so it addresses the user's concern, while still answering their original request.
+
+Conversation so far:
+{context}
+
+Assistant's original (dissatisfying) response:
+{original}
+
+The user's private reaction (why they were dissatisfied):
+{thought}
+
+Write an improved assistant response that resolves the user's concern. Output only
+the improved response, with no preamble.

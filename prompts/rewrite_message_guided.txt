@@ -1,0 +1,22 @@
+# Appendix D.9 — message-guided rewrite prompt.
+# Replace with the EXACT Appendix D.9 message-guided rewrite prompt for faithful reproduction.
+# Like the thought-guided version, but the dissatisfaction signal is the user's
+# FOLLOW-UP MESSAGE (what they said next) rather than a private reaction.
+# Placeholders: {context} = dialogue up to the dissatisfying assistant turn,
+#               {original} = the assistant response the user was dissatisfied with,
+#               {followup} = the user's next message after that response.
+
+You are improving an AI assistant's response. After the assistant replied, the
+user sent a follow-up that signals they were not fully satisfied. Rewrite the
+assistant's response so it better serves the user, anticipating the follow-up.
+
+Conversation so far:
+{context}
+
+Assistant's original response:
+{original}
+
+The user's follow-up message (signals dissatisfaction):
+{followup}
+
+Write an improved assistant response. Output only the improved response, with no preamble.

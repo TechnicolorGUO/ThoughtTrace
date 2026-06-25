@@ -98,11 +98,14 @@ class LLMClient:
             "messages": messages,
             "temperature": self.temperature if temperature is None else temperature,
             "max_tokens": self.max_tokens if max_tokens is None else max_tokens,
-            # Qwen3 thinking toggle; harmless extra field for other servers.
-            "extra_body": {
-                "chat_template_kwargs": {"enable_thinking": self.enable_thinking}
-            },
         }
+        # Qwen3-specific thinking toggle. Only sent when enable_thinking is set
+        # (True/False); leave it null in config for providers (e.g. DeepSeek,
+        # OpenAI) that reject unknown extra_body fields.
+        if self.enable_thinking is not None:
+            params["extra_body"] = {
+                "chat_template_kwargs": {"enable_thinking": self.enable_thinking}
+            }
 
         key = _stable_key(params)
         cache_file = self.cache_dir / f"{key}.json"

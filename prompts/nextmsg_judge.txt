@@ -1,0 +1,20 @@
+# Appendix D.8 — semantic-similarity judge (0-100) for next-message prediction.
+# Replace with the EXACT Appendix D.8 similarity-judge prompt for faithful reproduction.
+# Placeholders: {predicted} = model's predicted next message, {actual} = the real next message.
+
+You are scoring how well a PREDICTED user message matches the ACTUAL user message
+they sent next. Judge semantic similarity — same intent, request, and content —
+not surface wording.
+
+Score from 0 to 100:
+- 100 = same intent and content
+- ~50 = partially overlapping intent
+- 0 = unrelated
+
+PREDICTED:
+{predicted}
+
+ACTUAL:
+{actual}
+
+Respond with JSON only: {"score": <integer 0-100>}
