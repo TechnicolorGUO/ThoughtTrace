@@ -205,13 +205,15 @@ def main() -> None:
     ap.add_argument("--n", type=int, default=None)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--quick", action="store_true")
+    ap.add_argument("--config", default=None,
+                    help="config yaml for the rewriter/judge endpoint (default: configs/default.yaml)")
     ap.add_argument("--wildchat", default=None, help="path to WildChat jsonl (message_wildchat)")
     args = ap.parse_args()
 
     from ..config import load_config
     from ..llm_client import LLMClient
 
-    cfg = load_config()
+    cfg = load_config(args.config) if args.config else load_config()
     client = LLMClient.from_config(cfg["llm"])
     judge = LLMClient.from_config(cfg["judge"]) if cfg.get("judge", {}).get("model") else client
     data = io.load(quick=args.quick)

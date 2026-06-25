@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 outputs/
+
+# runtime build config (contains endpoint/key)
+configs/_build.yaml
+configs/*.local.yaml
