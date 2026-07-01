@@ -1,0 +1,11 @@
+{
+  "conversations": 2155,
+  "assistant_to_user_pairs": 6374,
+  "skipped_missing_reaction": 2140,
+  "skipped_missing_reason": 1401,
+  "samples": 2833,
+  "train_samples": 2691,
+  "val_samples": 142,
+  "val_ratio": 0.05,
+  "max_history_turns": 6
+}
