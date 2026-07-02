@@ -5,14 +5,13 @@ set -xeuo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-WORKSPACE_ROOT="$(cd "${PROJECT_ROOT}/../.." && pwd)"
 
 # ---- user-adjustable ----
 MODEL_PATH="${MODEL_PATH:-${HOME}/autodl-fs/beichen/public_models/Qwen3.5-4B}"
 STUDENT_MODEL="${STUDENT_MODEL:-$MODEL_PATH}"
 TEACHER_MODEL="${TEACHER_MODEL:-${HOME}/autodl-fs/beichen/public_models/Qwen3.5-9B}"
 
-VERL_ROOT="${VERL_ROOT:-${WORKSPACE_ROOT}/OPD/verl}"
+VERL_ROOT="${VERL_ROOT:-}"
 
 TRAIN_DATA="${TRAIN_DATA:-${PROJECT_ROOT}/data/processed_en/user_sim_train.parquet}"
 VAL_DATA="${VAL_DATA:-${PROJECT_ROOT}/data/processed_en/user_sim_val.parquet}"
@@ -142,7 +141,9 @@ EXTRA=(
 )
 
 ########################### launch ###########################
-cd "$VERL_ROOT"
+if [[ -n "$VERL_ROOT" ]]; then
+    cd "$VERL_ROOT"
+fi
 
 python3 -m verl.trainer.main_ppo \
     "${DATA[@]}" \
